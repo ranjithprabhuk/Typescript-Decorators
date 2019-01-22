@@ -1,0 +1,22 @@
+{
+  "name": "typescript-decorators",
+  "version": "1.0.0",
+  "description": "typescript decorators are explained with example",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "yet to be added"
+  },
+  "keywords": [
+    "typescript",
+    "decorators"
+  ],
+  "author": "Ranjithprabhu",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.2.4"
+  }
+}
