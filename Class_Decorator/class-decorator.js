@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,14 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var logger = function (originalConstructor) {
+var classLogger = function (originalConstructor) {
     var newConstructor = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        console.log("Arguments: , " + args.join(', '));
+        console.log("Arguments: " + args.join(', '));
         new originalConstructor(args);
     };
     newConstructor.prototype = originalConstructor.prototype;
@@ -25,7 +23,7 @@ var User = (function () {
     function User(name, email, age) {
     }
     User = __decorate([
-        logger,
+        classLogger,
         __metadata("design:paramtypes", [String, String, Number])
     ], User);
     return User;
@@ -34,7 +32,7 @@ var Product = (function () {
     function Product(name, price) {
     }
     Product = __decorate([
-        logger,
+        classLogger,
         __metadata("design:paramtypes", [String, String])
     ], Product);
     return Product;
