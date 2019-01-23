@@ -1,4 +1,4 @@
-const classLogger = <T>(originalConstructor: new(...args: any[]) => T): any => {
+const logClass = <T>(originalConstructor: new(...args: any[]) => T): any => {
     const newConstructor = (...args) => {
         console.log(`Arguments: ${args.join(', ')}`);
         new originalConstructor(args);
@@ -8,14 +8,14 @@ const classLogger = <T>(originalConstructor: new(...args: any[]) => T): any => {
     return newConstructor;
 }
 
-@classLogger
+@logClass
 class User {
     constructor(name: string, email: string, age: number) {
 
 	}
 }
 
-@classLogger
+@logClass
 class Product {
     constructor(name: string, price: string) {
 

@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var classLogger = function (originalConstructor) {
+var logClass = function (originalConstructor) {
     var newConstructor = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
@@ -23,7 +23,7 @@ var User = (function () {
     function User(name, email, age) {
     }
     User = __decorate([
-        classLogger,
+        logClass,
         __metadata("design:paramtypes", [String, String, Number])
     ], User);
     return User;
@@ -32,7 +32,7 @@ var Product = (function () {
     function Product(name, price) {
     }
     Product = __decorate([
-        classLogger,
+        logClass,
         __metadata("design:paramtypes", [String, String])
     ], Product);
     return Product;
