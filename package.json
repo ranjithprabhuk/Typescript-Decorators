@@ -18,5 +18,8 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "^3.2.4"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
   }
 }
