@@ -4,7 +4,7 @@
   "description": "typescript decorators are explained with example",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "build": "tsc -p ."
   },
   "repository": {
     "type": "git",
