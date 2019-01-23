@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var functionLogger = function (target, targetKey, descriptor) {
+var logMethod = function (target, targetKey, descriptor) {
     return {
         value: function () {
             var args = [];
@@ -38,19 +38,19 @@ var Calculator = (function () {
         console.log('Value of Y:', y);
     };
     __decorate([
-        functionLogger,
+        logMethod,
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Number, Number]),
         __metadata("design:returntype", Number)
     ], Calculator.prototype, "add", null);
     __decorate([
-        functionLogger,
+        logMethod,
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Number, Number]),
         __metadata("design:returntype", Number)
     ], Calculator.prototype, "sub", null);
     __decorate([
-        functionLogger,
+        logMethod,
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Number, Number]),
         __metadata("design:returntype", void 0)
