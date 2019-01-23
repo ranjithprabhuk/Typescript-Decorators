@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,8 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var logger = function (target, targetKey, descriptor) {
+var functionLogger = function (target, targetKey, descriptor) {
     return {
         value: function () {
             var args = [];
@@ -17,9 +15,11 @@ var logger = function (target, targetKey, descriptor) {
                 args[_i] = arguments[_i];
             }
             console.info("'" + targetKey + "' method is executed");
-            console.log("Arguments: , " + args.join(', '));
+            console.log("Arguments: " + args.join(', '));
             var result = descriptor.value.apply(target, args);
-            console.log("Result: , " + result);
+            if (result) {
+                console.log("Result: " + result);
+            }
             return result;
         }
     };
@@ -38,19 +38,19 @@ var Calculator = (function () {
         console.log('Value of Y:', y);
     };
     __decorate([
-        logger,
+        functionLogger,
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Number, Number]),
         __metadata("design:returntype", Number)
     ], Calculator.prototype, "add", null);
     __decorate([
-        logger,
+        functionLogger,
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Number, Number]),
         __metadata("design:returntype", Number)
     ], Calculator.prototype, "sub", null);
     __decorate([
-        logger,
+        functionLogger,
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Number, Number]),
         __metadata("design:returntype", void 0)
