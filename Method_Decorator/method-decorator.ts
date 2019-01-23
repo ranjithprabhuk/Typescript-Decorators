@@ -1,4 +1,4 @@
-const functionLogger = (target: Object, targetKey: string, descriptor: TypedPropertyDescriptor<any>): any => {
+const logMethod = (target: Object, targetKey: string, descriptor: TypedPropertyDescriptor<any>): any => {
     return {
         value: ( ... args: any[]): any => {
             console.info(`'${targetKey}' method is executed`);
@@ -15,17 +15,17 @@ const functionLogger = (target: Object, targetKey: string, descriptor: TypedProp
 }
 
 class Calculator {
-    @functionLogger
+    @logMethod
     add(x: number, y: number): number {
         return x + y;
     }
 
-    @functionLogger
+    @logMethod
     sub(x: number, y: number): number {
         return x - y;
     }
 
-    @functionLogger
+    @logMethod
     print(x: number, y: number): void {
         console.log('Value of X:', x);
         console.log('Value of Y:', y);
